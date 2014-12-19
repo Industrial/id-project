@@ -32,6 +32,6 @@
     "watchify": "^0.10.2"
   },
   "devDependencies": {
-    "gulp": "^3.8.7"
+    "gulp": "^3.8.10"
   }
 }
