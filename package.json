@@ -1,7 +1,7 @@
 {
   "name": "id-project",
   "version": "2.13.0",
-  "description": "JavaScript project structure on which we're basing other projects.",
+  "description": "DRY project automation for Node.js and javascript frontend projects.",
   "repository": {
     "type": "git",
     "url": "http://github.com/Industrial/id-project.git"
