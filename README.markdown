@@ -10,7 +10,7 @@ $ npm install --save-dev id-project gulp coffee-script
 
 ## Usage
 
-Running id-projects should work with very little configuration. Right now the
+Running id-project should work with very little configuration. Right now the
 policy is to enable all options by default.
 
 1. Put a file named `gulpfile.coffee` in your project directory containing:
