@@ -46,7 +46,7 @@ gulp.task("less:watch", ["less:compile", "livereload:run"], function(cb) {
       if (!options.path.match(/\.less/)) {
         return;
       }
-      log.debug("[less:watch] Compiling `" + file.path + "`.");
+      log.debug("[less:watch] Compiling `" + entryFilePath + "`.");
       return compile();
     });
   });
