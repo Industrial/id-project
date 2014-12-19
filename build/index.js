@@ -54,12 +54,6 @@ defaults.livereload = {
   enabled: true
 };
 
-defaults.nodemon = {
-  enabled: true,
-  entryFilePath: "app.js",
-  watchGlob: ["" + targetDirectoryPath + "/server/**/*.js"]
-};
-
 defaults.forever = {
   enabled: true,
   entryFilePath: "app.js",
