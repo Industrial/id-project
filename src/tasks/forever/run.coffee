@@ -8,9 +8,7 @@ log     = require "id-debug"
 options            = idProjectOptions.forever
 enabled            = options.enabled
 entryFilePath      = path.resolve options.entryFilePath
-options            = idProjectOptions.forever
 watchDirectoryPath = path.resolve options.watchDirectoryPath
-
 
 child = null
 

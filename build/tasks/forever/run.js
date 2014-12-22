@@ -16,8 +16,6 @@ enabled = options.enabled;
 
 entryFilePath = path.resolve(options.entryFilePath);
 
-options = idProjectOptions.forever;
-
 watchDirectoryPath = path.resolve(options.watchDirectoryPath);
 
 child = null;
