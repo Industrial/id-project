@@ -58,15 +58,14 @@ These options assume the default directory structure (but you can change it
 to anything you like):
 
 ```coffee
-sourceDirectoryPath = "src"
-targetDirectoryPath = "build"
+idProject = require "id-project"
 
-(require "id-project")
+idProject
 	browserify:
 		enabled:             true
-		entryFilePath:       "#{targetDirectoryPath}/client/js/app/app.js"
+		entryFilePath:       "src/client/js/app/app.js"
+		targetDirectoryPath: "build/client/js/app"
 		targetFilename:      "app.bundle.js"
-		targetDirectoryPath: "#{targetDirectoryPath}/client/js/app"
 
 	clean:
 		enabled:             true
@@ -74,37 +73,32 @@ targetDirectoryPath = "build"
 
 	coffee:
 		enabled:             true
-		sourceDirectoryPath: sourceDirectoryPath
-		targetDirectoryPath: targetDirectoryPath
+		sourceDirectoryPath: "src"
+		targetDirectoryPath: "build"
 
 	copy:
 		enabled:             true
 		excluded:            [ "!**/*.coffee", "!**/*.less" ]
-		sourceDirectoryPath: sourceDirectoryPath
-		targetDirectoryPath: targetDirectoryPath
+		sourceDirectoryPath: "src"
+		targetDirectoryPath: "build"
 
 	documentation:
 		enabled:             true
-		sourceDirectoryPath: sourceDirectoryPath
-		targetDirectoryPath: targetDirectoryPath
+		sourceDirectoryPath: "src"
+		targetDirectoryPath: "docs"
 
 	less:
 		enabled:             true
-		entryFilePath:       "#{sourceDirectoryPath}/client/less/app.less"
-		targetDirectoryPath: "#{targetDirectoryPath}/client/css"
+		entryFilePath:       "src/client/less/app.less"
+		targetDirectoryPath: "build/client/css"
 
 	livereload:
 		enabled:             true
 
-	nodemon:
-		enabled:             true
-		entryFilePath:       "app.js"
-		watchGlob:           [ "#{targetDirectoryPath}/server/**/*.js" ]
-
 	forever:
 		enabled:             true
 		entryFilePath:       "app.js"
-		watchDirectoryPath:  "#{targetDirectoryPath}/server"
+		watchDirectoryPath:  "build/server"
 
 	tests:
 		enabled:             true
@@ -112,8 +106,8 @@ targetDirectoryPath = "build"
 
 	watch:
 		enabled:             true
-		sourceDirectoryPath: sourceDirectoryPath
-		testDirectoryPath:   testDirectoryPath
+		sourceDirectoryPath: "src"
+		testDirectoryPath:   "build"
 ```
 
 # Features
