@@ -49,7 +49,6 @@ build/
 				app.js
 	server/
 		<anything>
-
 app.js # The main server file to be run. Generally starts something from the build/server/ directory
 ```
 
