@@ -16,7 +16,8 @@ policy is to enable all options by default.
 1. Put a file named `gulpfile.coffee` in your project directory containing:
 
 	```coffee
-	require "id-project"
+	idProject = require "id-project"
+	idProject()
 	```
 
 2. Run the gulpfile from the commandline:
@@ -25,7 +26,37 @@ policy is to enable all options by default.
 	$ gulp
 	```
 
+	Or with debugging:
+
+	```bash
+	$ DEBUGGING=true gulp
+	```
+
+### Default directory structure
+
+```
+src/
+	client/
+		js/
+			app/
+				app.coffee # The main client file to be browserified.
+	server/
+		<anything>
+build/
+	client/
+		js/
+			app/
+				app.js
+	server/
+		<anything>
+
+app.js # The main server file to be run. Generally starts something from the build/server/ directory
+```
+
 ### Default options
+
+These options assume the default directory structure (but you can change it
+to anything you like):
 
 ```coffee
 sourceDirectoryPath = "src"
@@ -70,6 +101,11 @@ targetDirectoryPath = "build"
 		enabled:             true
 		entryFilePath:       "app.js"
 		watchGlob:           [ "#{targetDirectoryPath}/server/**/*.js" ]
+
+	forever:
+		enabled:             true
+		entryFilePath:       "app.js"
+		watchDirectoryPath:  "#{targetDirectoryPath}/server"
 
 	tests:
 		enabled:             true
