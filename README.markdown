@@ -15,22 +15,22 @@ policy is to enable all options by default.
 
 1. Put a file named `gulpfile.coffee` in your project directory containing:
 
-	```coffee
-	idProject = require "id-project"
-	idProject()
-	```
+  ```coffee
+  idProject = require "id-project"
+  idProject()
+  ```
 
 2. Run the gulpfile from the commandline:
 
-	```bash
-	$ gulp
-	```
+  ```bash
+  $ gulp
+  ```
 
-	Or with debugging:
+  Or with debugging:
 
-	```bash
-	$ DEBUGGING=true gulp
-	```
+  ```bash
+  $ DEBUGGING=true gulp
+  ```
 
 ### Default directory structure
 
@@ -44,17 +44,17 @@ docs/              # Generated documentation.
 
 src/               # Input directory.
 
-	client/          # Browser files.
+  client/          # Browser files.
 
-		js/            # Browser JavaScript.
+    js/            # Browser JavaScript.
 
-			app/         # Your app.
+      app/         # Your app.
 
-				app.coffee # The app entry point (for browserify).
+        app.coffee # The app entry point (for browserify).
 
-	server/          # Server files.
+  server/          # Server files.
 
-		<anything>
+    <anything>
 
 test/              # Mocha unit tests.
 
@@ -71,53 +71,53 @@ to anything you like):
 idProject = require "id-project"
 
 idProject
-	browserify:
-		enabled:             true
-		entryFilePath:       "src/client/js/app/app.js"
-		targetDirectoryPath: "build/client/js/app"
-		targetFilename:      "app.bundle.js"
+  browserify:
+    enabled:             true
+    entryFilePath:       "src/client/js/app/app.js"
+    targetDirectoryPath: "build/client/js/app"
+    targetFilename:      "app.bundle.js"
 
-	clean:
-		enabled:             true
-		targetDirectoryPath: targetDirectoryPath
+  clean:
+    enabled:             true
+    targetDirectoryPath: targetDirectoryPath
 
-	coffee:
-		enabled:             true
-		sourceDirectoryPath: "src"
-		targetDirectoryPath: "build"
+  coffee:
+    enabled:             true
+    sourceDirectoryPath: "src"
+    targetDirectoryPath: "build"
 
-	copy:
-		enabled:             true
-		excluded:            [ "!**/*.coffee", "!**/*.less" ]
-		sourceDirectoryPath: "src"
-		targetDirectoryPath: "build"
+  copy:
+    enabled:             true
+    excluded:            [ "!**/*.coffee", "!**/*.less" ]
+    sourceDirectoryPath: "src"
+    targetDirectoryPath: "build"
 
-	documentation:
-		enabled:             true
-		sourceDirectoryPath: "src"
-		targetDirectoryPath: "docs"
+  documentation:
+    enabled:             true
+    sourceDirectoryPath: "src"
+    targetDirectoryPath: "docs"
 
-	less:
-		enabled:             true
-		entryFilePath:       "src/client/less/app.less"
-		targetDirectoryPath: "build/client/css"
+  less:
+    enabled:             true
+    entryFilePath:       "src/client/less/app.less"
+    targetDirectoryPath: "build/client/css"
 
-	livereload:
-		enabled:             true
+  livereload:
+    enabled:             true
 
-	forever:
-		enabled:             true
-		entryFilePath:       "app.js"
-		watchDirectoryPath:  "build/server"
+  forever:
+    enabled:             true
+    entryFilePath:       "app.js"
+    watchDirectoryPath:  "build/server"
 
-	tests:
-		enabled:             true
-		directoryPath:       "test"
+  tests:
+    enabled:             true
+    directoryPath:       "test"
 
-	watch:
-		enabled:             true
-		sourceDirectoryPath: "src"
-		testDirectoryPath:   "build"
+  watch:
+    enabled:             true
+    sourceDirectoryPath: "src"
+    testDirectoryPath:   "build"
 ```
 
 # Features
