@@ -34,22 +34,32 @@ policy is to enable all options by default.
 
 ### Default directory structure
 
+This is the directory structure the default options assume:
+
 ```
-src/
-	client/
-		js/
-			app/
-				app.coffee # The main client file to be browserified.
-	server/
+build/             # Output directory. Typically what you want to bundle with
+                   # NPM and run.
+
+docs/              # Generated documentation.
+
+src/               # Input directory.
+
+	client/          # Browser files.
+
+		js/            # Browser JavaScript.
+
+			app/         # Your app.
+
+				app.coffee # The app entry point (for browserify).
+
+	server/          # Server files.
+
 		<anything>
-build/
-	client/
-		js/
-			app/
-				app.js
-	server/
-		<anything>
-app.js # The main server file to be run. Generally starts something from the build/server/ directory
+
+test/              # Mocha unit tests.
+
+app.js             # The server entry point. Generally starts something from
+                   # the build/server/ directory.
 ```
 
 ### Default options
