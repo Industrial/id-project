@@ -1,3 +1,5 @@
+# Discontinued! see [id-builder](https://github.com/Industrial/id-builder)
+
 A gulp based project structure and compilation automation.
 
 ## Installation
